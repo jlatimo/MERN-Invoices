@@ -50,4 +50,4 @@ const customSchema = new mongoose.Schema({
 });
 
 ///exporting Module
-module.exports = mongoose('invoice', customSchema);
+module.exports = mongoose.model('invoice', customSchema);
