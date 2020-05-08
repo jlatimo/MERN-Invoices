@@ -1,2 +1,10 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import './myStyles.css';
+
+ReactDOM.render(
+    <div>
+        <h1>Welcome to React!</h1>
+        <p1> random text about react</p1>
+    </div>,
+document.getElementById('root'));

@@ -10,14 +10,15 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.(js|jsx)$/, use: ['babel-loader'] } { test: /\.(css)$/, use: ['style=loader', 'css-loader'] }
+            { test: /\.(js|jsx)$/, use: ['babel-loader'] },
+            { test: /\.(css)$/, use: ['style=loader', 'css-loader'] }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Invoice Generator',
-            template: './src/template.js',
+            template: './src/template.ejs',
             filename: 'invoice.html',
             chunks: ['app']
         })
