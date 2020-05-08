@@ -9,9 +9,8 @@ const bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, 'dist')));
 
 /// Connection to MongoDB ///
-mongoose.connect
-    ('mongodb+srv://root:rootPass@invoicegeneratorapp-ew1ik.gcp.mongodb.' +
-        'net/invoiceStorage?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://root:rootPass@invoicegeneratorapp-ew1ik.gcp.mongodb.' +
+    'net/invoiceStorage?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 /// Catch error during MongoDB connection ///
 mongoose.connection.on('error', (error) => {
@@ -33,13 +32,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /// Rest API's for routes ///Create
-app.use('/api/createinvoice', require('./routes/create.js'));
+app.use('/api/createinvoice', require('../routes/create.js'));
 /// Read
-app.use('/api/readinvoice', require('./routes/read.js'));
+app.use('/api/readinvoice', require('../routes/read.js'));
 /// Update
-app.use('/api/updateinvoice', require('./routes/update.js'));
+app.use('/api/updateinvoice', require('../routes/update.js'));
 /// Delete
-app.use('/api/deleteinvoice', require('./routes/delete.js'));
+app.use('/api/deleteinvoice', require('../routes/delete.js'));
 
 /// Open Port listener ///
 app.listen(3000, () => {
